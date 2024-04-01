@@ -30,15 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.fileButton = new System.Windows.Forms.ToolStripButton();
-            this.tickTime = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.fileLabel = new System.Windows.Forms.Label();
             this.StartStopButton = new System.Windows.Forms.Button();
@@ -47,6 +45,9 @@
             this.BLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.MLabel = new System.Windows.Forms.Label();
+            this.tickTime = new System.Windows.Forms.Timer(this.components);
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.inputPort = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainChart)).BeginInit();
@@ -63,6 +64,16 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // fileButton
+            // 
+            this.fileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fileButton.Image = ((System.Drawing.Image)(resources.GetObject("fileButton.Image")));
+            this.fileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.fileButton.Name = "fileButton";
+            this.fileButton.Size = new System.Drawing.Size(29, 22);
+            this.fileButton.Text = "File";
+            this.fileButton.Click += new System.EventHandler(this.fileButton_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -78,34 +89,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 377);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // fileButton
-            // 
-            this.fileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fileButton.Image = ((System.Drawing.Image)(resources.GetObject("fileButton.Image")));
-            this.fileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.fileButton.Name = "fileButton";
-            this.fileButton.Size = new System.Drawing.Size(29, 22);
-            this.fileButton.Text = "File";
-            this.fileButton.Click += new System.EventHandler(this.fileButton_Click);
-            // 
-            // tickTime
-            // 
-            this.tickTime.Tick += new System.EventHandler(this.tickTime_Tick);
-            // 
             // MainChart
             // 
-            chartArea1.AxisX.Title = "B";
-            chartArea1.AxisY.Title = "M";
-            chartArea1.Name = "ChartArea1";
-            this.MainChart.ChartAreas.Add(chartArea1);
+            chartArea3.AxisX.Title = "B";
+            chartArea3.AxisY.Title = "M";
+            chartArea3.Name = "ChartArea1";
+            this.MainChart.ChartAreas.Add(chartArea3);
             this.MainChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainChart.Location = new System.Drawing.Point(163, 3);
             this.MainChart.Name = "MainChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series1.IsVisibleInLegend = false;
-            series1.Name = "MB";
-            this.MainChart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.IsVisibleInLegend = false;
+            series3.Name = "MB";
+            this.MainChart.Series.Add(series3);
             this.MainChart.Size = new System.Drawing.Size(634, 371);
             this.MainChart.TabIndex = 2;
             this.MainChart.Text = "chart1";
@@ -218,6 +215,15 @@
             this.MLabel.TabIndex = 7;
             this.MLabel.Text = "-";
             // 
+            // tickTime
+            // 
+            this.tickTime.Tick += new System.EventHandler(this.tickTime_Tick);
+            // 
+            // inputPort
+            // 
+            this.inputPort.ErrorReceived += new System.IO.Ports.SerialErrorReceivedEventHandler(this.inputPort_ErrorReceived);
+            this.inputPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.inputPort_DataReceived);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +261,7 @@
         private System.Windows.Forms.Label BLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label MLabel;
+        private System.IO.Ports.SerialPort inputPort;
     }
 }
 
