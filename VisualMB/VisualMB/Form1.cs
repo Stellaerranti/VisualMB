@@ -22,7 +22,7 @@ namespace VisualMB
         private bool isFileLinked = false;
         private bool isOn= false;
 
-        private int counter = 0;
+        private int counter = 1;
 
         private float M = 0;
         private float B = 0;
@@ -95,18 +95,35 @@ namespace VisualMB
 
             if (counter == 5)
             {
-                counter = 0;
-
-                M = M / 5;
-                B = B / 5;
+                
+                M = M / counter;
+                B = B / counter;
 
                 MainChart.Series["MB"].Points.AddXY(B, M);
 
+                File.WriteAllText(outputFile,B.ToString() +"\t"+M.ToString()+"\n");
+
+                BLabel.Text = B.ToString();
+                MLabel.Text = M.ToString();
+
                 M = 0;
                 B = 0;
+
+                counter = 1;
+
             }
+
+            /*MainChart.Series["MB"].Points.AddXY(B, M);
+
+            File.WriteAllText(outputFile, B.ToString() + "\t" + M.ToString() + "\n");
+
+            BLabel.Text = B.ToString();
+            MLabel.Text = M.ToString();
+
+            M = 0;
+            B = 0;*/
         }
-       
+
 
         /*private void displayData()
         {
@@ -115,6 +132,7 @@ namespace VisualMB
         //Main cycle
         private void checkPort(object source, ElapsedEventArgs e)
         {
+            /*
             if (!isFileLinked) { return; }
             if (!isOn) { return; }
 
@@ -126,9 +144,10 @@ namespace VisualMB
                 string[] input = inputPort.ReadLine().Split();
 
                 //string in1 = inputPort.ReadLine();
-                B = B + float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
-                M = M + float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
-
+                //B = B + float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
+                //M = M + float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
+                B = float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
+                M = float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
                 Invoke((MethodInvoker)(() => displayData(B,M)));
 
                 //Invoke((MethodInvoker)(() => displayData()));
@@ -136,7 +155,7 @@ namespace VisualMB
             catch { }
 
             //inputPort.Close();
-
+            */
         }
        
 
@@ -156,9 +175,37 @@ namespace VisualMB
 
         private void inputPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            if (!isFileLinked) { return; }
+            if (!isOn) { return; }
+            try
+            {
+                string[] input = inputPort.ReadLine().Split();
+
+                //string in1 = inputPort.ReadLine();
+                B = B + float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
+                M = M + float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
+                //B = float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
+                //M = float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
+                Invoke((MethodInvoker)(() => displayData(B, M)));
+                //displayData(B, M);
+                //Invoke((MethodInvoker)(() => displayData()));
+            }
+            catch { }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!inputPort.IsOpen)
+              inputPort.Close();
+
 
         }
 
-      
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!inputPort.IsOpen)
+                inputPort.Close();
+
+        }
     }
 }

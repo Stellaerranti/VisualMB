@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.fileButton = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -93,19 +93,19 @@
             // 
             // MainChart
             // 
-            chartArea4.AxisX.Title = "B";
-            chartArea4.AxisY.Title = "M";
-            chartArea4.Name = "ChartArea1";
-            this.MainChart.ChartAreas.Add(chartArea4);
+            chartArea7.AxisX.Title = "B";
+            chartArea7.AxisY.Title = "M";
+            chartArea7.Name = "ChartArea1";
+            this.MainChart.ChartAreas.Add(chartArea7);
             this.MainChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainChart.Location = new System.Drawing.Point(326, 6);
             this.MainChart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MainChart.Name = "MainChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series4.IsVisibleInLegend = false;
-            series4.Name = "MB";
-            this.MainChart.Series.Add(series4);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series7.IsVisibleInLegend = false;
+            series7.Name = "MB";
+            this.MainChart.Series.Add(series7);
             this.MainChart.Size = new System.Drawing.Size(1268, 719);
             this.MainChart.TabIndex = 2;
             this.MainChart.Text = "chart1";
@@ -192,7 +192,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 60);
             this.label2.TabIndex = 4;
-            this.label2.Text = "M:";
+            this.label2.Text = "B:";
             // 
             // BLabel
             // 
@@ -214,7 +214,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 61);
             this.label4.TabIndex = 6;
-            this.label4.Text = "B:";
+            this.label4.Text = "M:";
             // 
             // MLabel
             // 
@@ -243,6 +243,8 @@
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Please give me the name";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
