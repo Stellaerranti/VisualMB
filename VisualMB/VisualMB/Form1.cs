@@ -40,7 +40,6 @@ namespace VisualMB
             saveFileDialog.RestoreDirectory = true;
 
             MainChart.Series["MB"].Points.Clear();          
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -102,7 +101,6 @@ namespace VisualMB
                     file.WriteLine(B.ToString("F3") + "\t" + M.ToString("F3"));
                 }
 
-
                 BLabel.Text = B.ToString("F3");
                 MLabel.Text = M.ToString("F3");
 
@@ -135,11 +133,8 @@ namespace VisualMB
             {
                 string[] input = inputPort.ReadLine().Split();
 
-
-                B = float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat) * B_cal;
-                M = float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat) * M_cal;
-
-
+                B = float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
+                M = float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
 
                 Invoke((MethodInvoker)(() => displayData()));
 
@@ -151,15 +146,12 @@ namespace VisualMB
         {
             if (!inputPort.IsOpen)
               inputPort.Close();
-
-
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!inputPort.IsOpen)
                 inputPort.Close();
-
         }      
 
         private void BcalText_TextChanged(object sender, EventArgs e)
@@ -171,8 +163,7 @@ namespace VisualMB
         }
 
         private void McalText_TextChanged(object sender, EventArgs e)
-        {
-            
+        {            
             if (Double.TryParse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double check))
             { 
                 M_cal = double.Parse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture); 
