@@ -30,10 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.fileButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,8 +46,13 @@
             this.BLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.MLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.BcalText = new System.Windows.Forms.TextBox();
+            this.McalText = new System.Windows.Forms.TextBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.inputPort = new System.IO.Ports.SerialPort(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainChart)).BeginInit();
@@ -57,7 +63,8 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileButton});
+            this.fileButton,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
@@ -75,6 +82,15 @@
             this.fileButton.Text = "File";
             this.fileButton.Click += new System.EventHandler(this.fileButton_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 36);
+            this.toolStripButton1.Text = "options";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -84,7 +100,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 42);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 97.59036F));
@@ -93,19 +109,19 @@
             // 
             // MainChart
             // 
-            chartArea7.AxisX.Title = "B";
-            chartArea7.AxisY.Title = "M";
-            chartArea7.Name = "ChartArea1";
-            this.MainChart.ChartAreas.Add(chartArea7);
+            chartArea2.AxisX.Title = "B";
+            chartArea2.AxisY.Title = "M";
+            chartArea2.Name = "ChartArea1";
+            this.MainChart.ChartAreas.Add(chartArea2);
             this.MainChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainChart.Location = new System.Drawing.Point(326, 6);
-            this.MainChart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MainChart.Margin = new System.Windows.Forms.Padding(6);
             this.MainChart.Name = "MainChart";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series7.IsVisibleInLegend = false;
-            series7.Name = "MB";
-            this.MainChart.Series.Add(series7);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.IsVisibleInLegend = false;
+            series2.Name = "MB";
+            this.MainChart.Series.Add(series2);
             this.MainChart.Size = new System.Drawing.Size(1268, 719);
             this.MainChart.TabIndex = 2;
             this.MainChart.Text = "chart1";
@@ -124,17 +140,23 @@
             this.tableLayoutPanel2.Controls.Add(this.BLabel, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.MLabel, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.BcalText, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.McalText, 1, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 6);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 313);
+            this.tableLayoutPanel2.RowCount = 7;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 371);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label1
@@ -144,7 +166,7 @@
             this.label1.Location = new System.Drawing.Point(8, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 60);
+            this.label1.Size = new System.Drawing.Size(139, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "File:";
             // 
@@ -155,17 +177,17 @@
             this.fileLabel.Location = new System.Drawing.Point(161, 2);
             this.fileLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.fileLabel.Name = "fileLabel";
-            this.fileLabel.Size = new System.Drawing.Size(139, 60);
+            this.fileLabel.Size = new System.Drawing.Size(139, 50);
             this.fileLabel.TabIndex = 1;
             this.fileLabel.Text = "-";
             // 
             // StartStopButton
             // 
             this.StartStopButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StartStopButton.Location = new System.Drawing.Point(8, 132);
-            this.StartStopButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.StartStopButton.Location = new System.Drawing.Point(8, 112);
+            this.StartStopButton.Margin = new System.Windows.Forms.Padding(6);
             this.StartStopButton.Name = "StartStopButton";
-            this.StartStopButton.Size = new System.Drawing.Size(139, 48);
+            this.StartStopButton.Size = new System.Drawing.Size(139, 38);
             this.StartStopButton.TabIndex = 2;
             this.StartStopButton.Text = "Start";
             this.StartStopButton.UseVisualStyleBackColor = true;
@@ -174,10 +196,10 @@
             // ClearButton
             // 
             this.ClearButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClearButton.Location = new System.Drawing.Point(161, 132);
-            this.ClearButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ClearButton.Location = new System.Drawing.Point(161, 112);
+            this.ClearButton.Margin = new System.Windows.Forms.Padding(6);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(139, 48);
+            this.ClearButton.Size = new System.Drawing.Size(139, 38);
             this.ClearButton.TabIndex = 3;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -187,10 +209,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(8, 188);
+            this.label2.Location = new System.Drawing.Point(8, 158);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 60);
+            this.label2.Size = new System.Drawing.Size(139, 50);
             this.label2.TabIndex = 4;
             this.label2.Text = "B:";
             // 
@@ -198,10 +220,10 @@
             // 
             this.BLabel.AutoSize = true;
             this.BLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BLabel.Location = new System.Drawing.Point(161, 188);
+            this.BLabel.Location = new System.Drawing.Point(161, 158);
             this.BLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.BLabel.Name = "BLabel";
-            this.BLabel.Size = new System.Drawing.Size(139, 60);
+            this.BLabel.Size = new System.Drawing.Size(139, 50);
             this.BLabel.TabIndex = 5;
             this.BLabel.Text = "-";
             // 
@@ -209,10 +231,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(8, 250);
+            this.label4.Location = new System.Drawing.Point(8, 210);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 61);
+            this.label4.Size = new System.Drawing.Size(139, 50);
             this.label4.TabIndex = 6;
             this.label4.Text = "M:";
             // 
@@ -220,18 +242,66 @@
             // 
             this.MLabel.AutoSize = true;
             this.MLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MLabel.Location = new System.Drawing.Point(161, 250);
+            this.MLabel.Location = new System.Drawing.Point(161, 210);
             this.MLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MLabel.Name = "MLabel";
-            this.MLabel.Size = new System.Drawing.Size(139, 61);
+            this.MLabel.Size = new System.Drawing.Size(139, 50);
             this.MLabel.TabIndex = 7;
             this.MLabel.Text = "-";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(8, 262);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 50);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "B_cal:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(8, 314);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 55);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "M_cal:";
+            // 
+            // BcalText
+            // 
+            this.BcalText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BcalText.Location = new System.Drawing.Point(158, 265);
+            this.BcalText.Name = "BcalText";
+            this.BcalText.Size = new System.Drawing.Size(145, 31);
+            this.BcalText.TabIndex = 12;
+            this.BcalText.Text = "1";
+            this.BcalText.TextChanged += new System.EventHandler(this.BcalText_TextChanged);
+            // 
+            // McalText
+            // 
+            this.McalText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.McalText.Location = new System.Drawing.Point(158, 317);
+            this.McalText.Name = "McalText";
+            this.McalText.Size = new System.Drawing.Size(145, 31);
+            this.McalText.TabIndex = 13;
+            this.McalText.Text = "1";
+            this.McalText.TextChanged += new System.EventHandler(this.McalText_TextChanged);
             // 
             // inputPort
             // 
             this.inputPort.PortName = "COM3";
             this.inputPort.ErrorReceived += new System.IO.Ports.SerialErrorReceivedEventHandler(this.inputPort_ErrorReceived);
             this.inputPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.inputPort_DataReceived);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Form1
             // 
@@ -240,7 +310,7 @@
             this.ClientSize = new System.Drawing.Size(1600, 773);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Please give me the name";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -274,6 +344,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label MLabel;
         private System.IO.Ports.SerialPort inputPort;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox BcalText;
+        private System.Windows.Forms.TextBox McalText;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

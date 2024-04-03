@@ -13,6 +13,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Timers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using static System.Windows.Forms.LinkLabel;
 
 namespace VisualMB
 {
@@ -22,13 +23,14 @@ namespace VisualMB
         private bool isFileLinked = false;
         private bool isOn= false;
 
-        private int counter = 1;
+        StreamWriter file;
 
-        private float M = 0;
-        private float B = 0;
+        private double M = 0;
+        private double B = 0;
 
-        System.Timers.Timer aTimer;
-
+        private double B_cal;
+        private double M_cal;
+       
         //private SerialPort port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
 
         public Form1()
@@ -37,18 +39,10 @@ namespace VisualMB
             saveFileDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
             saveFileDialog.RestoreDirectory = true;
 
-            MainChart.Series["MB"].Points.Clear();
-
-            aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(checkPort);
-            aTimer.Interval = 100;
+            MainChart.Series["MB"].Points.Clear();          
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-          //  var timer = new System.Threading.Timer(_ => checkPort(), null, 0, 100);
-        }
 
         //Подключаем файл
         private void fileButton_Click(object sender, EventArgs e)
@@ -67,9 +61,7 @@ namespace VisualMB
             {
                 StartStopButton.Text = "Start";
                 isOn = false;
-                aTimer.Enabled = false;
-
-                //tickTime.Enabled = false;
+                
                 inputPort.Close();
             }
             else if (!isOn)
@@ -77,85 +69,36 @@ namespace VisualMB
                 StartStopButton.Text = "Stop";
                 isOn = true;
 
-                //tickTime.Enabled = true;
                 inputPort.Open();
-
-                aTimer.Enabled = true;
-
-                counter = 0;
+            
                 M = 0;
                 B = 0;
             }
         }
 
-        private void displayData(double B, double M)
-        {          
-
-            counter++;
-
-            if (counter == 5)
+        private void displayData()
+        {
+            
+            try
             {
-                
-                M = M / counter;
-                B = B / counter;
+                B = B * B_cal;
+                M = M * M_cal;
 
                 MainChart.Series["MB"].Points.AddXY(B, M);
 
-                File.WriteAllText(outputFile,B.ToString() +"\t"+M.ToString()+"\n");
+                using (StreamWriter file = new StreamWriter(outputFile,true))
+                {
+                    file.WriteLine(B.ToString("F3") + "\t" + M.ToString("F3"));
+                }
 
-                BLabel.Text = B.ToString();
-                MLabel.Text = M.ToString();
+
+                BLabel.Text = B.ToString("F3");
+                MLabel.Text = M.ToString("F3");
 
                 M = 0;
                 B = 0;
-
-                counter = 1;
-
-            }
-
-            /*MainChart.Series["MB"].Points.AddXY(B, M);
-
-            File.WriteAllText(outputFile, B.ToString() + "\t" + M.ToString() + "\n");
-
-            BLabel.Text = B.ToString();
-            MLabel.Text = M.ToString();
-
-            M = 0;
-            B = 0;*/
-        }
-
-
-        /*private void displayData()
-        {
-            MainChart.Series["MB"].Points.AddXY(0,0);
-        }*/
-        //Main cycle
-        private void checkPort(object source, ElapsedEventArgs e)
-        {
-            /*
-            if (!isFileLinked) { return; }
-            if (!isOn) { return; }
-
-            //if (!inputPort.IsOpen)
-              //  inputPort.Open();
-
-            try
-            {
-                string[] input = inputPort.ReadLine().Split();
-
-                //string in1 = inputPort.ReadLine();
-                //B = B + float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
-                //M = M + float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
-                B = float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
-                M = float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
-                Invoke((MethodInvoker)(() => displayData(B,M)));
-
-                //Invoke((MethodInvoker)(() => displayData()));
             }
             catch { }
-
-            //inputPort.Close();
-            */
         }
        
 
@@ -181,14 +124,14 @@ namespace VisualMB
             {
                 string[] input = inputPort.ReadLine().Split();
 
-                //string in1 = inputPort.ReadLine();
-                B = B + float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
-                M = M + float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
-                //B = float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
-                //M = float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
-                Invoke((MethodInvoker)(() => displayData(B, M)));
-                //displayData(B, M);
-                //Invoke((MethodInvoker)(() => displayData()));
+
+                B = float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat) * B_cal;
+                M = float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat) * M_cal;
+
+
+
+                Invoke((MethodInvoker)(() => displayData()));
+
             }
             catch { }
         }
@@ -206,6 +149,29 @@ namespace VisualMB
             if (!inputPort.IsOpen)
                 inputPort.Close();
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            B_cal = 1;
+            M_cal = 1;
+        }
+
+        private void BcalText_TextChanged(object sender, EventArgs e)
+        {
+            if (Double.TryParse(BcalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double check))
+            { 
+                B_cal = double.Parse(BcalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture); 
+            }
+        }
+
+        private void McalText_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (Double.TryParse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double check))
+            { 
+                M_cal = double.Parse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture); 
+            }
         }
     }
 }
