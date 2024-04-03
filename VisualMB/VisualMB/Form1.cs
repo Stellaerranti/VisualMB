@@ -43,6 +43,13 @@ namespace VisualMB
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            B_cal = 1;
+            M_cal = 1;
+
+            COMportBox.SelectedIndex = 0;
+        }
 
         //Подключаем файл
         private void fileButton_Click(object sender, EventArgs e)
@@ -57,20 +64,24 @@ namespace VisualMB
 
         private void StartStopButton_Click(object sender, EventArgs e)
         {
+
             if (isOn)
             {
                 StartStopButton.Text = "Start";
                 isOn = false;
-                
-                inputPort.Close();
+
+                if (inputPort.IsOpen) { inputPort.Close(); }
+               
             }
             else if (!isOn)
-            {
+            {             
+
+                try { 
+                inputPort.Open();
+                }
+                catch { MessageBox.Show("Can' connect to " + inputPort.PortName); return; }
                 StartStopButton.Text = "Stop";
                 isOn = true;
-
-                inputPort.Open();
-            
                 M = 0;
                 B = 0;
             }
@@ -149,13 +160,7 @@ namespace VisualMB
             if (!inputPort.IsOpen)
                 inputPort.Close();
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            B_cal = 1;
-            M_cal = 1;
-        }
+        }      
 
         private void BcalText_TextChanged(object sender, EventArgs e)
         {
@@ -171,6 +176,17 @@ namespace VisualMB
             if (Double.TryParse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double check))
             { 
                 M_cal = double.Parse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture); 
+            }
+        }
+
+        private void ButtonConnect_Click(object sender, EventArgs e)
+        {
+            switch(COMportBox.SelectedIndex) 
+            {
+                case 0: inputPort.PortName = "COM1"; break;
+                case 1: inputPort.PortName = "COM2"; break;
+                case 2: inputPort.PortName = "COM3"; break;
+                case 3: inputPort.PortName = "COM4"; break;
             }
         }
     }
