@@ -1,0 +1,10 @@
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\bin\Release\VisualMB.exe.config
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\bin\Release\VisualMB.exe
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\bin\Release\VisualMB.pdb
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.Form1.resources
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.Properties.Resources.resources
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.csproj.GenerateResource.cache
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.exe
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.pdb

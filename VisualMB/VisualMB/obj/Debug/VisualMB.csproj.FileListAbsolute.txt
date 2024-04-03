@@ -8,3 +8,13 @@ C:\Users\Home\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.csp
 C:\Users\Home\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.csproj.CoreCompileInputs.cache
 C:\Users\Home\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.exe
 C:\Users\Home\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.pdb
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\bin\Debug\VisualMB.exe.config
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\bin\Debug\VisualMB.exe
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\bin\Debug\VisualMB.pdb
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.Form1.resources
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.Properties.Resources.resources
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.csproj.GenerateResource.cache
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.exe
+C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Debug\VisualMB.pdb

@@ -9,7 +9,10 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using System.Timers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace VisualMB
 {
@@ -24,6 +27,8 @@ namespace VisualMB
         private float M = 0;
         private float B = 0;
 
+        System.Timers.Timer aTimer;
+
         //private SerialPort port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
 
         public Form1()
@@ -33,6 +38,16 @@ namespace VisualMB
             saveFileDialog.RestoreDirectory = true;
 
             MainChart.Series["MB"].Points.Clear();
+
+            aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(checkPort);
+            aTimer.Interval = 100;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+          //  var timer = new System.Threading.Timer(_ => checkPort(), null, 0, 100);
         }
 
         //Подключаем файл
@@ -52,8 +67,9 @@ namespace VisualMB
             {
                 StartStopButton.Text = "Start";
                 isOn = false;
+                aTimer.Enabled = false;
 
-                tickTime.Enabled = false;
+                //tickTime.Enabled = false;
                 inputPort.Close();
             }
             else if (!isOn)
@@ -61,8 +77,10 @@ namespace VisualMB
                 StartStopButton.Text = "Stop";
                 isOn = true;
 
-                tickTime.Enabled = true;
+                //tickTime.Enabled = true;
                 inputPort.Open();
+
+                aTimer.Enabled = true;
 
                 counter = 0;
                 M = 0;
@@ -70,16 +88,8 @@ namespace VisualMB
             }
         }
 
-        //Main cycle
-        private void tickTime_Tick(object sender, EventArgs e)
-        {
-            if(!isFileLinked) { return; }
-            if(!isOn) { return; }
-
-            string[] input = inputPort.ReadLine().Split();
-
-            B = B + float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
-            M = M + float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
+        private void displayData(double B, double M)
+        {          
 
             counter++;
 
@@ -96,6 +106,39 @@ namespace VisualMB
                 B = 0;
             }
         }
+       
+
+        /*private void displayData()
+        {
+            MainChart.Series["MB"].Points.AddXY(0,0);
+        }*/
+        //Main cycle
+        private void checkPort(object source, ElapsedEventArgs e)
+        {
+            if (!isFileLinked) { return; }
+            if (!isOn) { return; }
+
+            //if (!inputPort.IsOpen)
+              //  inputPort.Open();
+
+            try
+            {
+                string[] input = inputPort.ReadLine().Split();
+
+                //string in1 = inputPort.ReadLine();
+                B = B + float.Parse(input[0], CultureInfo.InvariantCulture.NumberFormat);
+                M = M + float.Parse(input[1], CultureInfo.InvariantCulture.NumberFormat);
+
+                Invoke((MethodInvoker)(() => displayData(B,M)));
+
+                //Invoke((MethodInvoker)(() => displayData()));
+            }
+            catch { }
+
+            //inputPort.Close();
+
+        }
+       
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
@@ -105,7 +148,7 @@ namespace VisualMB
         private void inputPort_ErrorReceived(object sender, SerialErrorReceivedEventArgs e)
         {
             isOn = false;
-            tickTime.Enabled = false;
+            //tickTime.Enabled = false;
             StartStopButton.Text = "Start";
             inputPort.Close();
             MessageBox.Show("Can't read from port");
@@ -115,5 +158,7 @@ namespace VisualMB
         {
 
         }
+
+      
     }
 }

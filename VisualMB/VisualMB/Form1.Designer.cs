@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.fileButton = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,7 +45,6 @@
             this.BLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.MLabel = new System.Windows.Forms.Label();
-            this.tickTime = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.inputPort = new System.IO.Ports.SerialPort(this.components);
             this.toolStrip1.SuspendLayout();
@@ -56,11 +55,13 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1600, 42);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -70,7 +71,7 @@
             this.fileButton.Image = ((System.Drawing.Image)(resources.GetObject("fileButton.Image")));
             this.fileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.fileButton.Name = "fileButton";
-            this.fileButton.Size = new System.Drawing.Size(29, 22);
+            this.fileButton.Size = new System.Drawing.Size(55, 36);
             this.fileButton.Text = "File";
             this.fileButton.Click += new System.EventHandler(this.fileButton_Click);
             // 
@@ -82,28 +83,30 @@
             this.tableLayoutPanel1.Controls.Add(this.MainChart, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 25);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 42);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 97.59036F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 377);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 731);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // MainChart
             // 
-            chartArea3.AxisX.Title = "B";
-            chartArea3.AxisY.Title = "M";
-            chartArea3.Name = "ChartArea1";
-            this.MainChart.ChartAreas.Add(chartArea3);
+            chartArea4.AxisX.Title = "B";
+            chartArea4.AxisY.Title = "M";
+            chartArea4.Name = "ChartArea1";
+            this.MainChart.ChartAreas.Add(chartArea4);
             this.MainChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainChart.Location = new System.Drawing.Point(163, 3);
+            this.MainChart.Location = new System.Drawing.Point(326, 6);
+            this.MainChart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MainChart.Name = "MainChart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series3.IsVisibleInLegend = false;
-            series3.Name = "MB";
-            this.MainChart.Series.Add(series3);
-            this.MainChart.Size = new System.Drawing.Size(634, 371);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series4.IsVisibleInLegend = false;
+            series4.Name = "MB";
+            this.MainChart.Series.Add(series4);
+            this.MainChart.Size = new System.Drawing.Size(1268, 719);
             this.MainChart.TabIndex = 2;
             this.MainChart.Text = "chart1";
             // 
@@ -122,7 +125,8 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.MLabel, 1, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -130,16 +134,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(154, 163);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 313);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(5, 2);
+            this.label1.Location = new System.Drawing.Point(8, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 30);
+            this.label1.Size = new System.Drawing.Size(139, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "File:";
             // 
@@ -147,18 +152,20 @@
             // 
             this.fileLabel.AutoSize = true;
             this.fileLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fileLabel.Location = new System.Drawing.Point(81, 2);
+            this.fileLabel.Location = new System.Drawing.Point(161, 2);
+            this.fileLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.fileLabel.Name = "fileLabel";
-            this.fileLabel.Size = new System.Drawing.Size(68, 30);
+            this.fileLabel.Size = new System.Drawing.Size(139, 60);
             this.fileLabel.TabIndex = 1;
             this.fileLabel.Text = "-";
             // 
             // StartStopButton
             // 
             this.StartStopButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StartStopButton.Location = new System.Drawing.Point(5, 69);
+            this.StartStopButton.Location = new System.Drawing.Point(8, 132);
+            this.StartStopButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.StartStopButton.Name = "StartStopButton";
-            this.StartStopButton.Size = new System.Drawing.Size(68, 24);
+            this.StartStopButton.Size = new System.Drawing.Size(139, 48);
             this.StartStopButton.TabIndex = 2;
             this.StartStopButton.Text = "Start";
             this.StartStopButton.UseVisualStyleBackColor = true;
@@ -167,9 +174,10 @@
             // ClearButton
             // 
             this.ClearButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ClearButton.Location = new System.Drawing.Point(81, 69);
+            this.ClearButton.Location = new System.Drawing.Point(161, 132);
+            this.ClearButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(68, 24);
+            this.ClearButton.Size = new System.Drawing.Size(139, 48);
             this.ClearButton.TabIndex = 3;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -179,9 +187,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(5, 98);
+            this.label2.Location = new System.Drawing.Point(8, 188);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 30);
+            this.label2.Size = new System.Drawing.Size(139, 60);
             this.label2.TabIndex = 4;
             this.label2.Text = "M:";
             // 
@@ -189,9 +198,10 @@
             // 
             this.BLabel.AutoSize = true;
             this.BLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BLabel.Location = new System.Drawing.Point(81, 98);
+            this.BLabel.Location = new System.Drawing.Point(161, 188);
+            this.BLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.BLabel.Name = "BLabel";
-            this.BLabel.Size = new System.Drawing.Size(68, 30);
+            this.BLabel.Size = new System.Drawing.Size(139, 60);
             this.BLabel.TabIndex = 5;
             this.BLabel.Text = "-";
             // 
@@ -199,9 +209,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(5, 130);
+            this.label4.Location = new System.Drawing.Point(8, 250);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 31);
+            this.label4.Size = new System.Drawing.Size(139, 61);
             this.label4.TabIndex = 6;
             this.label4.Text = "B:";
             // 
@@ -209,30 +220,30 @@
             // 
             this.MLabel.AutoSize = true;
             this.MLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MLabel.Location = new System.Drawing.Point(81, 130);
+            this.MLabel.Location = new System.Drawing.Point(161, 250);
+            this.MLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MLabel.Name = "MLabel";
-            this.MLabel.Size = new System.Drawing.Size(68, 31);
+            this.MLabel.Size = new System.Drawing.Size(139, 61);
             this.MLabel.TabIndex = 7;
             this.MLabel.Text = "-";
             // 
-            // tickTime
-            // 
-            this.tickTime.Tick += new System.EventHandler(this.tickTime_Tick);
-            // 
             // inputPort
             // 
+            this.inputPort.PortName = "COM3";
             this.inputPort.ErrorReceived += new System.IO.Ports.SerialErrorReceivedEventHandler(this.inputPort_ErrorReceived);
             this.inputPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.inputPort_DataReceived);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 402);
+            this.ClientSize = new System.Drawing.Size(1600, 773);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Please give me the name";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -249,7 +260,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStripButton fileButton;
-        private System.Windows.Forms.Timer tickTime;
         private System.Windows.Forms.DataVisualization.Charting.Chart MainChart;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
