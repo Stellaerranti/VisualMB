@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.fileButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -111,19 +111,19 @@
             // 
             // MainChart
             // 
-            chartArea4.AxisX.Title = "B";
-            chartArea4.AxisY.Title = "M";
-            chartArea4.Name = "ChartArea1";
-            this.MainChart.ChartAreas.Add(chartArea4);
+            chartArea5.AxisX.Title = "B";
+            chartArea5.AxisY.Title = "M";
+            chartArea5.Name = "ChartArea1";
+            this.MainChart.ChartAreas.Add(chartArea5);
             this.MainChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainChart.Location = new System.Drawing.Point(326, 6);
             this.MainChart.Margin = new System.Windows.Forms.Padding(6);
             this.MainChart.Name = "MainChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series4.IsVisibleInLegend = false;
-            series4.Name = "MB";
-            this.MainChart.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series5.IsVisibleInLegend = false;
+            series5.Name = "MB";
+            this.MainChart.Series.Add(series5);
             this.MainChart.Size = new System.Drawing.Size(1268, 711);
             this.MainChart.TabIndex = 2;
             this.MainChart.Text = "chart1";
@@ -329,7 +329,7 @@
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.Size = new System.Drawing.Size(145, 49);
             this.ButtonConnect.TabIndex = 15;
-            this.ButtonConnect.Text = "connect";
+            this.ButtonConnect.Text = "select";
             this.ButtonConnect.UseVisualStyleBackColor = true;
             this.ButtonConnect.Click += new System.EventHandler(this.ButtonConnect_Click);
             // 
