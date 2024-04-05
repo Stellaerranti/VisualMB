@@ -8,3 +8,14 @@ C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\
 C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.csproj.CoreCompileInputs.cache
 C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.exe
 C:\Users\user\OneDrive\Документы\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.pdb
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\bin\Release\VisualMB.exe.config
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\bin\Release\VisualMB.exe
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\bin\Release\VisualMB.pdb
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.csproj.AssemblyReference.cache
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.Form1.resources
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.oprions.resources
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.Properties.Resources.resources
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.csproj.GenerateResource.cache
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.csproj.CoreCompileInputs.cache
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.exe
+C:\Users\Rudko\Documents\GitHub\VisualMB\VisualMB\VisualMB\obj\Release\VisualMB.pdb

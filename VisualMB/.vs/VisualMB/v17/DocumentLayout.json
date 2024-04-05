@@ -1,14 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Home\\Documents\\GitHub\\VisualMB\\VisualMB\\",
+  "WorkspaceRootPath": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|C:\\Users\\Home\\Documents\\GitHub\\VisualMB\\VisualMB\\visualmb\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|c:\\users\\rudko\\documents\\github\\visualmb\\visualmb\\visualmb\\oprions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|solutionrelative:visualmb\\oprions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|c:\\users\\rudko\\documents\\github\\visualmb\\visualmb\\visualmb\\oprions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|solutionrelative:visualmb\\oprions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|c:\\users\\rudko\\documents\\github\\visualmb\\visualmb\\visualmb\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|solutionrelative:visualmb\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|c:\\users\\home\\documents\\github\\visualmb\\visualmb\\visualmb\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\visualmb\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|solutionrelative:visualmb\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|VisualMB||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|c:\\users\\rudko\\documents\\github\\visualmb\\visualmb\\visualmb\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{ADC73F15-2075-484E-8A02-B0AD9177D615}|VisualMB\\VisualMB.csproj|solutionrelative:visualmb\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,24 +38,61 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "oprions.cs",
+              "DocumentMoniker": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\oprions.cs",
+              "RelativeDocumentMoniker": "VisualMB\\oprions.cs",
+              "ToolTip": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\oprions.cs",
+              "RelativeToolTip": "VisualMB\\oprions.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAawD0AAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T13:34:43.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "oprions.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\oprions.cs",
+              "RelativeDocumentMoniker": "VisualMB\\oprions.cs",
+              "ToolTip": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\oprions.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "VisualMB\\oprions.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T13:23:40.3Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VisualMB",
+              "DocumentMoniker": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\VisualMB.csproj",
+              "RelativeDocumentMoniker": "VisualMB\\VisualMB.csproj",
+              "ToolTip": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\VisualMB.csproj",
+              "RelativeToolTip": "VisualMB\\VisualMB.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-05T13:22:17.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Home\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs",
               "RelativeDocumentMoniker": "VisualMB\\Form1.cs",
-              "ToolTip": "C:\\Users\\Home\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs*",
-              "RelativeToolTip": "VisualMB\\Form1.cs*",
-              "ViewState": "AQIAADoAAAAAAAAAAAAgwFwAAAA4AAAA",
+              "ToolTip": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs",
+              "RelativeToolTip": "VisualMB\\Form1.cs",
+              "ViewState": "AQIAAJEAAAAAAAAAAAAEwKQAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-31T19:41:26.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\Home\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs",
               "RelativeDocumentMoniker": "VisualMB\\Form1.cs",
-              "ToolTip": "C:\\Users\\Home\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
-              "RelativeToolTip": "VisualMB\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "ToolTip": "C:\\Users\\Rudko\\Documents\\GitHub\\VisualMB\\VisualMB\\VisualMB\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "VisualMB\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-31T18:56:25.153Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"

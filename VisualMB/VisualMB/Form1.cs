@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using System.Timers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using static System.Windows.Forms.LinkLabel;
+using VisualMB.Properties;
 
 namespace VisualMB
 {
@@ -30,6 +31,8 @@ namespace VisualMB
 
         private double B_cal;
         private double M_cal;
+
+        oprions optionWindow;
        
         //private SerialPort port = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
 
@@ -39,15 +42,16 @@ namespace VisualMB
             saveFileDialog.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
             saveFileDialog.RestoreDirectory = true;
 
-            MainChart.Series["MB"].Points.Clear();          
+            MainChart.Series["MB"].Points.Clear();
+
+            optionWindow = new oprions(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             B_cal = 1;
             M_cal = 1;
-
-            COMportBox.SelectedIndex = 0;
+           
         }
 
         //Подключаем файл
@@ -91,8 +95,8 @@ namespace VisualMB
             
             try
             {
-                B = B * B_cal;
-                M = M * M_cal;
+                B = B * Settings.Default.B_cal;
+                M = M * Settings.Default.M_cal;
 
                 MainChart.Series["MB"].Points.AddXY(B, M);
 
@@ -154,31 +158,16 @@ namespace VisualMB
                 inputPort.Close();
         }      
 
-        private void BcalText_TextChanged(object sender, EventArgs e)
+
+
+        public void SettingsChanged()
         {
-            if (Double.TryParse(BcalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double check))
-            { 
-                B_cal = double.Parse(BcalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture); 
-            }
+            inputPort.PortName = Settings.Default.COMname;
         }
 
-        private void McalText_TextChanged(object sender, EventArgs e)
-        {            
-            if (Double.TryParse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double check))
-            { 
-                M_cal = double.Parse(McalText.Text, NumberStyles.Any, CultureInfo.InvariantCulture); 
-            }
-        }
-
-        private void ButtonConnect_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            switch(COMportBox.SelectedIndex) 
-            {
-                case 0: inputPort.PortName = "COM1"; break;
-                case 1: inputPort.PortName = "COM2"; break;
-                case 2: inputPort.PortName = "COM3"; break;
-                case 3: inputPort.PortName = "COM4"; break;
-            }
+            optionWindow.Show();
         }
     }
 }
